@@ -6,7 +6,13 @@ import { FormValues, schema } from "./models";
 const CustomForm = () => {
     const { control, handleSubmit, formState: { errors } } = useForm<FormValues>({
         resolver: zodResolver(schema),
-        mode: "onBlur"
+        mode: "onBlur",
+        defaultValues: {
+            name: "",
+            email: "",
+            password: "",
+            confirmPassword: ""
+        }
     });
 
     // que sucede cuando hacemos un submit
